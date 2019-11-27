@@ -50,29 +50,11 @@ spring:
      useGlobalDataSourceStat: true
      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-
-mybatis:
-  # 指定全局配置文件位置
-  config-location: classpath:mybatis/mybatis-config.xml
-  # 指定sql映射文件位置
-  mapper-locations: classpath:mybatis/mapper/*.xml
-configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#服务器端口设置
 server:
+  port: 8899
   tomcat:
     uri-encoding: utf-8
-logging:
-  level:
-     yude:
-        mes:
-           com:
-              mes_yd:
-                 mapper: debug
 
-#debug: true
-#    schema:
-#      - classpath:sql/department.sql
-#      - classpath:sql/employee.sql
-#
-#server:
-#    port:8081
+
+
