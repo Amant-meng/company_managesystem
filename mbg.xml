@@ -19,7 +19,7 @@
 		</javaTypeResolver>
 
 		<!-- 指定javaBean生成的位置 -->
-		<javaModelGenerator targetPackage="yude.mes.com.mes_yd.ceshi.beans"
+		<javaModelGenerator targetPackage="yude.mes.com.ccut.ceshi.beans"
 			targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -32,7 +32,7 @@
 
 		<!-- 指定dao接口生成的位置，mapper接口 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="yude.mes.com.mes_yd.ceshi.dao" targetProject=".\src\main\java">
+                             targetPackage="yude.mes.com.ccut.ceshi.dao" targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 

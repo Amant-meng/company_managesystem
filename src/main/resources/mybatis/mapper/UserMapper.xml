@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="yude.mes.com.mes_yd.ceshi.dao.UserMapper1">
-  <resultMap id="BaseResultMap" type="yude.mes.com.mes_yd.ceshi.beans.User">
+<mapper namespace="yude.mes.com.ccut.ceshi.dao.UserMapper1">
+  <resultMap id="BaseResultMap" type="yude.mes.com.ccut.ceshi.beans.User">
     <id column="USERCODE" jdbcType="VARCHAR" property="usercode" />
     <result column="USERPWD" jdbcType="VARCHAR" property="userpwd" />
     <result column="USERNAME" jdbcType="VARCHAR" property="username" />
@@ -76,10 +76,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    USERCODE, USERPWD, USERNAME, USERTEL, USEREMAIL, USERDEPART, MUSER, MDATE, MTIME, 
+    USERCODE, USERPWD, USERNAME, USERTEL, USEREMAIL, USERDEPART, MUSER, MDATE, MTIME,
     EATTRIBUTE1, USERSTAT, LOGINRES, LOGINDATE, LOGINTIME
   </sql>
-  <select id="selectByExample" parameterType="yude.mes.com.mes_yd.ceshi.beans.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="yude.mes.com.ccut.ceshi.beans.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,7 +94,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from TBLUSER
     where USERCODE = #{usercode,jdbcType=VARCHAR}
@@ -103,25 +103,25 @@
     delete from TBLUSER
     where USERCODE = #{usercode,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="yude.mes.com.mes_yd.ceshi.beans.UserExample">
+  <delete id="deleteByExample" parameterType="yude.mes.com.ccut.ceshi.beans.UserExample">
     delete from TBLUSER
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="yude.mes.com.mes_yd.ceshi.beans.User">
-    insert into TBLUSER (USERCODE, USERPWD, USERNAME, 
-      USERTEL, USEREMAIL, USERDEPART, 
-      MUSER, MDATE, MTIME, 
-      EATTRIBUTE1, USERSTAT, LOGINRES, 
+  <insert id="insert" parameterType="yude.mes.com.ccut.ceshi.beans.User">
+    insert into TBLUSER (USERCODE, USERPWD, USERNAME,
+      USERTEL, USEREMAIL, USERDEPART,
+      MUSER, MDATE, MTIME,
+      EATTRIBUTE1, USERSTAT, LOGINRES,
       LOGINDATE, LOGINTIME)
-    values (#{usercode,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      #{usertel,jdbcType=VARCHAR}, #{useremail,jdbcType=VARCHAR}, #{userdepart,jdbcType=VARCHAR}, 
-      #{muser,jdbcType=VARCHAR}, #{mdate,jdbcType=DECIMAL}, #{mtime,jdbcType=DECIMAL}, 
-      #{eattribute1,jdbcType=VARCHAR}, #{userstat,jdbcType=VARCHAR}, #{loginres,jdbcType=VARCHAR}, 
+    values (#{usercode,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+      #{usertel,jdbcType=VARCHAR}, #{useremail,jdbcType=VARCHAR}, #{userdepart,jdbcType=VARCHAR},
+      #{muser,jdbcType=VARCHAR}, #{mdate,jdbcType=DECIMAL}, #{mtime,jdbcType=DECIMAL},
+      #{eattribute1,jdbcType=VARCHAR}, #{userstat,jdbcType=VARCHAR}, #{loginres,jdbcType=VARCHAR},
       #{logindate,jdbcType=DECIMAL}, #{logintime,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="yude.mes.com.mes_yd.ceshi.beans.User">
+  <insert id="insertSelective" parameterType="yude.mes.com.ccut.ceshi.beans.User">
     insert into TBLUSER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="usercode != null">
@@ -212,7 +212,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="yude.mes.com.mes_yd.ceshi.beans.UserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="yude.mes.com.ccut.ceshi.beans.UserExample" resultType="java.lang.Long">
     select count(*) from TBLUSER
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -288,7 +288,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="yude.mes.com.mes_yd.ceshi.beans.User">
+  <update id="updateByPrimaryKeySelective" parameterType="yude.mes.com.ccut.ceshi.beans.User">
     update TBLUSER
     <set>
       <if test="userpwd != null">
@@ -333,7 +333,7 @@
     </set>
     where USERCODE = #{usercode,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="yude.mes.com.mes_yd.ceshi.beans.User">
+  <update id="updateByPrimaryKey" parameterType="yude.mes.com.ccut.ceshi.beans.User">
     update TBLUSER
     set USERPWD = #{userpwd,jdbcType=VARCHAR},
       USERNAME = #{username,jdbcType=VARCHAR},
